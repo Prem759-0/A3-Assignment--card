@@ -1,0 +1,427 @@
+/* ==============================================
+   1. RESET
+   ============================================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==============================================
+   2. CSS VARIABLES — Design Tokens
+   ============================================== */
+:root {
+  --bg-page:        #0b0b0b;
+  --bg-card:        #111111;
+  --bg-card-inner:  #161616;
+  --border-card:    #2a2a2a;
+  --border-accent:  #ff7a00;
+  --orange:         #ff7a00;
+  --orange-muted:   #ff7a0020;
+  --orange-glow:    #ff7a0040;
+  --text-primary:   #f0f0f0;
+  --text-secondary: #9a9a9a;
+  --text-muted:     #555555;
+  --code-bg:        #1e1e1e;
+  --divider:        #222222;
+  --shadow-card:    0 8px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px #2a2a2a;
+  --radius-card:    16px;
+  --radius-tag:     100px;
+  --transition:     all 0.25s ease;
+  --font-main:      'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* ==============================================
+   3. BODY
+   ============================================== */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 48px 16px;
+
+  /* Subtle noise-like background texture via radial gradients */
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, #ff7a0012 0%, transparent 60%),
+    radial-gradient(ellipse 40% 30% at 80% 90%, #ff7a0008 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Page fade-in animation */
+body {
+  animation: pageFadeIn 0.6s ease both;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==============================================
+   4. CARD CONTAINER
+   ============================================== */
+.card-wrapper {
+  width: 100%;
+  max-width: 760px;
+}
+
+.card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  position: relative;
+
+  /* Top orange accent line */
+  border-top: 2px solid var(--orange);
+}
+
+/* ==============================================
+   5. CARD HEADER
+   ============================================== */
+.card-header {
+  padding: 36px 36px 28px;
+}
+
+.assignment-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+/* ==============================================
+   6. TAGS / PILL BADGES
+   ============================================== */
+.tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 14px;
+  border-radius: var(--radius-tag);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: var(--orange-muted);
+  transition: var(--transition);
+  cursor: default;
+  white-space: nowrap;
+}
+
+/* Hover glow on tags */
+.tag:hover {
+  background-color: var(--orange-glow);
+  box-shadow: 0 0 12px var(--orange-glow), 0 0 4px var(--orange-muted);
+}
+
+/* Special "points" badge — filled variant */
+.tag--points {
+  margin-left: auto;
+  background-color: var(--orange);
+  color: #000;
+  font-weight: 700;
+  border-color: var(--orange);
+}
+
+.tag--points:hover {
+  background-color: #ff9133;
+  box-shadow: 0 0 16px #ff7a0060;
+}
+
+/* ==============================================
+   7. SECTION LAYOUT
+   ============================================== */
+.card-section {
+  padding: 26px 36px;
+}
+
+/* ==============================================
+   8. TYPOGRAPHY
+   ============================================== */
+.section-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--orange);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Small left bar accent on headings */
+.section-heading::before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 80%;
+  background-color: var(--orange);
+  border-radius: 2px;
+}
+
+.description {
+  font-size: 0.92rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.description strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.description em {
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 500;
+}
+
+.body-text {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Inline code styling */
+code {
+  font-family: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  background-color: var(--code-bg);
+  color: #f0a35c;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid #2e2e2e;
+}
+
+/* ==============================================
+   9. LISTS
+   ============================================== */
+.styled-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 4px;
+}
+
+/* Bullet list items */
+.styled-list li {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 20px;
+  transition: color 0.2s ease;
+}
+
+.styled-list li:hover {
+  color: var(--text-primary);
+}
+
+/* Custom orange bullet dot */
+.styled-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  flex-shrink: 0;
+}
+
+/* Numbered list — override bullet with counter */
+.styled-list--numbered {
+  counter-reset: list-counter;
+}
+
+.styled-list--numbered li {
+  counter-increment: list-counter;
+}
+
+.styled-list--numbered li::before {
+  content: counter(list-counter);
+  background-color: transparent;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 0;
+  color: var(--orange);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+/* Skills list — slightly lighter bullets */
+.skills-list li::before {
+  background-color: var(--orange);
+  opacity: 0.8;
+}
+
+/* ==============================================
+   10. SECTION DIVIDERS
+   ============================================== */
+.divider {
+  border: none;
+  border-top: 1px solid var(--divider);
+  margin: 0 36px;
+}
+
+/* ==============================================
+   11. LINK / FOOTER STYLING
+   ============================================== */
+.card-footer {
+  padding: 28px 36px 36px;
+}
+
+.designs-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.designs-link {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--orange);
+  text-decoration: none;
+  word-break: break-all;
+  line-height: 1.6;
+  position: relative;
+  transition: var(--transition);
+  opacity: 0.75;
+
+  /* Animated underline using pseudo-element */
+  background-image: linear-gradient(var(--orange), var(--orange));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 0% 1.5px;
+  transition: background-size 0.35s ease, opacity 0.25s ease, filter 0.25s ease;
+}
+
+.designs-link:hover {
+  opacity: 1;
+  filter: brightness(1.15);
+  background-size: 100% 1.5px;
+}
+
+/* ==============================================
+   12. RESPONSIVE MEDIA QUERIES
+   ============================================== */
+
+/* --- Tablet --- */
+@media (max-width: 768px) {
+  body {
+    padding: 32px 12px;
+  }
+
+  .card-header {
+    padding: 28px 24px 22px;
+  }
+
+  .card-section {
+    padding: 22px 24px;
+  }
+
+  .divider {
+    margin: 0 24px;
+  }
+
+  .card-footer {
+    padding: 22px 24px 30px;
+  }
+
+  .assignment-title {
+    font-size: 1.45rem;
+  }
+
+  .section-heading::before {
+    left: -12px;
+  }
+}
+
+/* --- Mobile --- */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 10px;
+  }
+
+  .card {
+    border-radius: 12px;
+  }
+
+  .card-header {
+    padding: 22px 18px 18px;
+  }
+
+  .card-section {
+    padding: 18px 18px;
+  }
+
+  .divider {
+    margin: 0 18px;
+  }
+
+  .card-footer {
+    padding: 18px 18px 26px;
+  }
+
+  .assignment-title {
+    font-size: 1.25rem;
+    letter-spacing: -0.02em;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    padding: 4px 11px;
+  }
+
+  .tag--points {
+    margin-left: 0;
+  }
+
+  .section-heading {
+    font-size: 0.85rem;
+  }
+
+  .section-heading::before {
+    left: -10px;
+    width: 3px;
+  }
+
+  .description,
+  .body-text,
+  .styled-list li {
+    font-size: 0.85rem;
+  }
+
+  .designs-link {
+    font-size: 0.72rem;
+  }
+}
