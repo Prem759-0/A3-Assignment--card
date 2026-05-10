@@ -3,145 +3,364 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>A3 — Assignment Three</title>
+  <title>A3 — Advanced UI Design Showcase</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- =============================================
-       MAIN CARD CONTAINER
-  ============================================= -->
-  <main class="card-wrapper">
-    <article class="card">
+  <!-- Ambient background orbs (CSS-only decoration) -->
+  <div class="bg-orbs" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
 
-      <!-- =========================================
-           HEADER — Title + Tags + Points
-      ========================================= -->
-      <header class="card-header">
-        <h1 class="assignment-title">A3 — Assignment Three</h1>
+  <!-- ============================================================
+       SECTION 1 — HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+    <!-- Animated floating particles -->
+    <div class="particles" aria-hidden="true">
+      <span class="p p1"></span><span class="p p2"></span><span class="p p3"></span>
+      <span class="p p4"></span><span class="p p5"></span><span class="p p6"></span>
+      <span class="p p7"></span><span class="p p8"></span>
+    </div>
 
-        <div class="tags-row">
-          <!-- Metadata pill badges -->
-          <span class="tag">Prof. Nitin Sir</span>
-          <span class="tag">HTML, CSS, Position</span>
-          <span class="tag">Batch C</span>
+    <!-- Decorative grid lines -->
+    <div class="grid-lines" aria-hidden="true"></div>
 
-          <!-- Points badge (right-aligned) -->
-          <span class="tag tag--points">Total 20 pts</span>
-        </div>
-      </header>
+    <div class="hero-inner">
+      <div class="badge-pill">✦ &nbsp;A3 Assignment Three</div>
 
-      <hr class="divider" />
+      <h1 class="hero-title">
+        Advanced&nbsp;UI
+        <span class="hero-title-accent">Design Showcase</span>
+      </h1>
 
-      <!-- =========================================
-           DESCRIPTION
-      ========================================= -->
-      <section class="card-section">
-        <p class="description">
-          Students must choose <strong>any three designs</strong> and recreate them
-          using <em>CSS Flexbox</em> and <em>Position</em> properties. Focus on
-          pixel-accurate layouts, clean code structure, and proper use of CSS
-          positioning techniques to match the reference designs as closely as possible.
-        </p>
-      </section>
+      <p class="hero-subtitle">
+        Recreating <strong>three premium landing pages</strong> from scratch —
+        using only CSS Flexbox and Position properties. No frameworks. No shortcuts.
+      </p>
 
-      <hr class="divider" />
-
-      <!-- =========================================
-           REQUIREMENTS
-      ========================================= -->
-      <section class="card-section">
-        <h2 class="section-heading">Requirements</h2>
-        <ul class="styled-list">
-          <li>Use <code>display: flex</code></li>
-          <li>Use <code>position: relative</code></li>
-          <li>Use <code>position: absolute</code></li>
-          <li>Proper alignment techniques</li>
-        </ul>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- =========================================
-           INSTRUCTIONS
-      ========================================= -->
-      <section class="card-section">
-        <h2 class="section-heading">Instructions</h2>
-        <p class="body-text">
-          Try to make the design as close as possible to the original.
-        </p>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- =========================================
-           FOR IMAGES / ASSETS
-      ========================================= -->
-      <section class="card-section">
-        <h2 class="section-heading">For Images / Assets</h2>
-        <ul class="styled-list">
-          <li>Google Lens</li>
-          <li>Google Search</li>
-          <li>Freepik</li>
-          <li>Pinterest</li>
-          <li>Unsplash</li>
-          <li>PNG websites</li>
-          <li>Or research using ChatGPT</li>
-        </ul>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- =========================================
-           IMPORTANT
-      ========================================= -->
-      <section class="card-section">
-        <h2 class="section-heading">Important</h2>
-        <p class="body-text">Before directly connecting with mentors:</p>
-        <ol class="styled-list styled-list--numbered">
-          <li>Try solving the issue yourself</li>
-          <li>Discuss with your friend / group members</li>
-          <li>Research properly on GPT or Google</li>
-          <li>If you still can't find the solution, then connect with mentors</li>
-        </ol>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- =========================================
-           SKILLS
-      ========================================= -->
-      <section class="card-section">
-        <h2 class="section-heading">This assignment will improve your:</h2>
-        <ul class="styled-list skills-list">
-          <li>Research skills</li>
-          <li>Problem-solving ability</li>
-          <li>UI understanding</li>
-          <li>CSS Flexbox concepts</li>
-          <li>CSS Position concepts</li>
-          <li>Real-world frontend structuring</li>
-        </ul>
-      </section>
-
-      <hr class="divider" />
-
-      <!-- =========================================
-           BOTTOM LINK SECTION
-      ========================================= -->
-      <footer class="card-footer">
-        <p class="designs-label">Designs →</p>
-        <a
-          href="https://www.pinterest.com/search/pins/?q=ui%20design%20website%20landing%20page"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="designs-link"
-        >
-          https://www.pinterest.com/search/pins/?q=ui%20design%20website%20landing%20page
+      <div class="hero-cta-row">
+        <a href="#designs" class="btn btn-primary">
+          View Selected Designs
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-      </footer>
+        <a href="#overview" class="btn btn-ghost">Assignment Details</a>
+      </div>
 
-    </article>
-  </main>
+      <div class="scroll-hint" aria-hidden="true">
+        <span class="scroll-line"></span>
+        <span class="scroll-label">scroll</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — ASSIGNMENT OVERVIEW
+  ============================================================ -->
+  <section class="overview" id="overview">
+    <div class="container">
+      <p class="section-eyebrow">Assignment Details</p>
+      <h2 class="section-title">The Brief</h2>
+
+      <div class="overview-grid">
+        <div class="info-card" style="--accent:#8b5cf6">
+          <div class="info-icon">👨‍🏫</div>
+          <div class="info-label">Professor</div>
+          <div class="info-value">Prof. Nitin Sir</div>
+        </div>
+        <div class="info-card" style="--accent:#f59e0b">
+          <div class="info-icon">📘</div>
+          <div class="info-label">Subject</div>
+          <div class="info-value">HTML &amp; CSS</div>
+        </div>
+        <div class="info-card" style="--accent:#06b6d4">
+          <div class="info-icon">🏆</div>
+          <div class="info-label">Total Points</div>
+          <div class="info-value">20 pts</div>
+        </div>
+        <div class="info-card" style="--accent:#14b8a6">
+          <div class="info-icon">⚡</div>
+          <div class="info-label">Batch</div>
+          <div class="info-value">Batch C</div>
+        </div>
+      </div>
+
+      <div class="concepts-strip">
+        <code>display: flex</code>
+        <span class="cs-sep">·</span>
+        <code>position: relative</code>
+        <span class="cs-sep">·</span>
+        <code>position: absolute</code>
+        <span class="cs-sep">·</span>
+        <code>CSS Grid</code>
+        <span class="cs-sep">·</span>
+        <code>z-index</code>
+        <span class="cs-sep">·</span>
+        <code>Responsive Design</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 — SELECTED DESIGNS SHOWCASE
+  ============================================================ -->
+  <section class="designs" id="designs">
+    <div class="container">
+      <p class="section-eyebrow">3 Designs Selected</p>
+      <h2 class="section-title">The Chosen Designs</h2>
+      <p class="section-sub">
+        Each design was carefully chosen to push a different set of CSS layout and visual skills.
+      </p>
+
+      <!-- ——— CARD 1 : NeoArt NFT Marketplace ——— -->
+      <article class="dcard dcard--nft">
+        <div class="dcard-inner">
+
+          <!-- Preview panel -->
+          <div class="preview-wrap">
+            <div class="preview-chrome">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+              <span class="chrome-url">neoart.market</span>
+            </div>
+            <div class="preview-body preview-body--nft">
+              <!-- Mini CSS-art mockup of NFT page -->
+              <div class="mock-nft">
+                <div class="mn-nav"><div class="mn-logo"></div><div class="mn-links"><i></i><i></i><i></i></div><div class="mn-btn"></div></div>
+                <div class="mn-headline"><div class="mnh-l1"></div><div class="mnh-l2"></div></div>
+                <div class="mn-grid">
+                  <div class="mn-card"><div class="mn-thumb mn-t1"></div><div class="mn-info"><div></div><div></div></div><div class="mn-bid"></div></div>
+                  <div class="mn-card"><div class="mn-thumb mn-t2"></div><div class="mn-info"><div></div><div></div></div><div class="mn-bid"></div></div>
+                  <div class="mn-card"><div class="mn-thumb mn-t3"></div><div class="mn-info"><div></div><div></div></div><div class="mn-bid"></div></div>
+                  <div class="mn-card"><div class="mn-thumb mn-t4"></div><div class="mn-info"><div></div><div></div></div><div class="mn-bid"></div></div>
+                </div>
+              </div>
+              <div class="preview-glow preview-glow--nft"></div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="dcard-content">
+            <div class="meta-row">
+              <span class="cat-badge" style="--c:#8b5cf6;--cb:#8b5cf620">NFT / Digital Art</span>
+              <span class="diff-badge diff--hard">Advanced</span>
+            </div>
+            <h3 class="dcard-title">NeoArt Marketplace</h3>
+            <p class="dcard-desc">
+              A full dark-mode NFT platform with a hero section, artwork grid cards, and
+              "Place Bid" buttons. Key challenges: overlapping <code>position: absolute</code>
+              price badges on cards, a multi-column <code>flex</code> grid, and glowing
+              purple CSS <code>box-shadow</code> layers.
+            </p>
+            <div class="tech-tags">
+              <span>Flexbox Grid</span>
+              <span>position: absolute</span>
+              <span>CSS Gradients</span>
+              <span>box-shadow glow</span>
+              <span>z-index layers</span>
+            </div>
+            <a href="#" class="btn btn-accent" style="--accent:#8b5cf6;--accent-dim:#8b5cf630">
+              Open Design
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ——— CARD 2 : Shinsei Village ——— -->
+      <article class="dcard dcard--shinsei">
+        <div class="dcard-inner dcard-inner--rev">
+
+          <!-- Content -->
+          <div class="dcard-content">
+            <div class="meta-row">
+              <span class="cat-badge" style="--c:#f59e0b;--cb:#f59e0b20">Anime / Story Landing</span>
+              <span class="diff-badge diff--mid">Intermediate</span>
+            </div>
+            <h3 class="dcard-title">Shinsei Village</h3>
+            <p class="dcard-desc">
+              A cinematic full-bleed hero with a centred anime character, dramatic mountain
+              backdrop, and Japanese-flavoured typography. The core skill is stacking
+              <code>position: absolute</code> layers for the character above the background
+              using <code>z-index</code> depth control.
+            </p>
+            <div class="tech-tags">
+              <span>Full-bleed layout</span>
+              <span>z-index stacking</span>
+              <span>backdrop-filter blur</span>
+              <span>Centred Flexbox</span>
+              <span>Gradient overlays</span>
+            </div>
+            <a href="#" class="btn btn-accent" style="--accent:#f59e0b;--accent-dim:#f59e0b30">
+              Open Design
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+          <!-- Preview panel -->
+          <div class="preview-wrap">
+            <div class="preview-chrome">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+              <span class="chrome-url">shinsei.village</span>
+            </div>
+            <div class="preview-body preview-body--shinsei">
+              <div class="mock-shinsei">
+                <div class="ms-bg"></div>
+                <div class="ms-mountain"></div>
+                <div class="ms-fog"></div>
+                <div class="ms-nav"><div class="ms-logo"></div><div class="ms-links"><i></i><i></i><i></i><i></i></div></div>
+                <div class="ms-hero">
+                  <div class="ms-character"></div>
+                  <div class="ms-copy">
+                    <div class="ms-sub"></div>
+                    <div class="ms-big ms-b1"></div>
+                    <div class="ms-big ms-b2"></div>
+                    <div class="ms-cta"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="preview-glow preview-glow--shinsei"></div>
+            </div>
+          </div>
+
+        </div>
+      </article>
+
+      <!-- ——— CARD 3 : Digital Hunters ——— -->
+      <article class="dcard dcard--dh">
+        <div class="dcard-inner">
+
+          <!-- Preview panel -->
+          <div class="preview-wrap">
+            <div class="preview-chrome">
+              <span class="dot dot-r"></span>
+              <span class="dot dot-y"></span>
+              <span class="dot dot-g"></span>
+              <span class="chrome-url">digitalh.studio</span>
+            </div>
+            <div class="preview-body preview-body--dh">
+              <div class="mock-dh">
+                <div class="md-nav"><div class="md-logo"></div><div class="md-links"><i></i><i></i><i></i></div><div class="md-cta"></div></div>
+                <div class="md-body">
+                  <div class="md-left">
+                    <div class="md-eyebrow"></div>
+                    <div class="md-t1"></div>
+                    <div class="md-t2 md-accent"></div>
+                    <div class="md-desc"><i></i><i></i><i></i></div>
+                    <div class="md-btns"><div class="md-b1"></div><div class="md-b2"></div></div>
+                  </div>
+                  <div class="md-right">
+                    <div class="md-ring md-ring-1"></div>
+                    <div class="md-ring md-ring-2"></div>
+                    <div class="md-astro"></div>
+                  </div>
+                </div>
+                <div class="md-stats">
+                  <div class="md-stat"><div></div><div></div></div>
+                  <div class="md-stat"><div></div><div></div></div>
+                  <div class="md-stat"><div></div><div></div></div>
+                  <div class="md-stat"><div></div><div></div></div>
+                </div>
+              </div>
+              <div class="preview-glow preview-glow--dh"></div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="dcard-content">
+            <div class="meta-row">
+              <span class="cat-badge" style="--c:#14b8a6;--cb:#14b8a620">Cyberpunk Agency</span>
+              <span class="diff-badge diff--hard">Advanced</span>
+            </div>
+            <h3 class="dcard-title">Digital Hunters</h3>
+            <p class="dcard-desc">
+              A futuristic dark-teal studio page with a dramatic astronaut illustration,
+              stat counters, and project cards. Key skills: two-column
+              <code>flex</code> hero, <code>position: absolute</code> decorative
+              rings behind the figure, and CSS Grid for the project section.
+            </p>
+            <div class="tech-tags">
+              <span>Two-column Flex</span>
+              <span>CSS Grid cards</span>
+              <span>position: absolute</span>
+              <span>Teal neon glow</span>
+              <span>Overflow clip</span>
+            </div>
+            <a href="#" class="btn btn-accent" style="--accent:#14b8a6;--accent-dim:#14b8a630">
+              Open Design
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+          </div>
+
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — SKILLS LEARNED
+  ============================================================ -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <p class="section-eyebrow">What I'll Learn</p>
+      <h2 class="section-title">Skills Developed</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card" style="--sk-accent:#8b5cf6;--delay:0s">
+          <div class="sk-icon">⬛</div>
+          <h4>Flexbox Layout</h4>
+          <p>Master one-dimensional layouts with alignment, wrapping, and direction control.</p>
+        </div>
+        <div class="skill-card" style="--sk-accent:#f59e0b;--delay:0.07s">
+          <div class="sk-icon">📍</div>
+          <h4>CSS Positioning</h4>
+          <p>Stack elements precisely using relative, absolute, fixed and sticky positioning.</p>
+        </div>
+        <div class="skill-card" style="--sk-accent:#06b6d4;--delay:0.14s">
+          <div class="sk-icon">📱</div>
+          <h4>Responsive Design</h4>
+          <p>Fluid grids and media queries that adapt seamlessly from mobile to 4K screens.</p>
+        </div>
+        <div class="skill-card" style="--sk-accent:#ec4899;--delay:0.21s">
+          <div class="sk-icon">🎨</div>
+          <h4>Modern UI/UX</h4>
+          <p>Glassmorphism, neon glow, gradients, and premium visual hierarchy.</p>
+        </div>
+        <div class="skill-card" style="--sk-accent:#22c55e;--delay:0.28s">
+          <div class="sk-icon">✨</div>
+          <h4>CSS Animation</h4>
+          <p>Keyframes, transitions, hover effects and micro-interactions — zero JavaScript.</p>
+        </div>
+        <div class="skill-card" style="--sk-accent:#14b8a6;--delay:0.35s">
+          <div class="sk-icon">🏗️</div>
+          <h4>Component Architecture</h4>
+          <p>Structuring HTML semantically into reusable, maintainable building blocks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-star">✦</div>
+      <p class="footer-main">Designed for A3 — Assignment Three</p>
+      <p class="footer-sub">Built with <strong>HTML &amp; CSS only</strong> · No frameworks · No JavaScript</p>
+      <div class="footer-tags">
+        <span>Flexbox</span><span>Grid</span><span>Position</span><span>Animations</span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
